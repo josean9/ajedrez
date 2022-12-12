@@ -65,7 +65,15 @@ def accionmenu():
             else:
                 print("Ingrese una opcion valida")
 def mover_pieza(f1, c1, f2, c2):
-    tablero_sin_jugar[f2-1][c2-1] = tablero_sin_jugar[f1-1][c1-1]
-    tablero_sin_jugar[f1-1][c1-1] = " "
+    if tablero_sin_jugar[f1][c1] in negras:
+        print("Movera una pieza negra")
+        tablero_sin_jugar[f2-1][c2-1] = tablero_sin_jugar[f1-1][c1-1]
+        tablero_sin_jugar[f1-1][c1-1] = " "
+    elif tablero_sin_jugar[f1][c1] in blancas:
+        print("Movera una pieza blanca")
+        tablero_sin_jugar[f2-1][c2-1] = tablero_sin_jugar[f1-1][c1-1]
+        tablero_sin_jugar[f1-1][c1-1] = " "
+    else:
+        print("No hay pieza en esa posicion")
     return tablero_sin_jugar
 
