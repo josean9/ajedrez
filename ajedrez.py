@@ -1,6 +1,9 @@
 from datos import *
 from funciones import *
-f = open(partida-ajedrez.txt, 'w')
-for i in tablero:
-    f.write('\t'.join(i) + '\n')
-f.close()
+nombre_fichero = input('Introduce el nombre del fichero: ')
+fichero = open(nombre_fichero, 'w')
+for i in tablero_sin_jugar:
+    fichero.write('\t'.join(i) + '\n')
+fichero.close()
+for i in tablero_sin_jugar.split('\n'):
+    tablero_final.append(i.split('\t'))
