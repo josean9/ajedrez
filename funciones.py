@@ -1,5 +1,6 @@
 def movimiento():
     print("Desea mover una pieza? (si/no)")
+    movimientos = 0
     respuesta = input()
     while True:
         if respuesta == "si":
@@ -16,7 +17,9 @@ def movimiento():
                 print("Ingrese un numero valido")
                 continue
             else:
-                return "Ha movido la pieza de la fila {} columna {} a la fila {} columna {}".format(fila_antes, columna_antes, fila_despues, columna_despues)
+                movimientos += 1
+                tablero_sin_jugar[fila_despues-1][columna_despues-1] = tablero_sin_jugar[fila_antes-1][columna_antes-1]
+                return "Ha movido la pieza de la fila {}, columna {} a la fila {}, columna {}".format(fila_antes, columna_antes, fila_despues, columna_despues)
         elif respuesta == "no":
             print("No se ha movido ninguna pieza, partida finalizada")
             break
